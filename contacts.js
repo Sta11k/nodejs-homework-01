@@ -23,7 +23,15 @@ const getContactById = async (contactId) => {
 };
 
 const removeContact = async (contactId) => {
-  // ...твой код
+  const contacts = await readContacts();
+  const [contact] = contacts.filter((contact) => {
+    return contact.id !== contactId;
+  });
+  return contact;
+  // const contacts = await readContacts();
+  // const [removeId] = contacts.filter((contact) => contact.id !== contactId);
+
+  // return contacts;
 };
 
 const addContact = async (name, email, phone) => {

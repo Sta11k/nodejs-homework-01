@@ -46,7 +46,15 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       break;
 
     case "remove":
-      // ... id
+      const removeById = await removeContact(id);
+      // const contacts = await listContacts();
+      if (removeById) {
+        log(chalk.black.bgGreen(`Contact deleete:  `));
+
+        //  console.log(contactById);
+      } else {
+        log(chalk.black.bgRed(`Contact is not deleete `));
+      }
       break;
 
     default:
