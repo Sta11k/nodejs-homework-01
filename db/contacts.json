@@ -1,35 +1,5 @@
 [
   {
-    "id": "1",
-    "name": "Allen Raymond",
-    "email": "nulla.ante@vestibul.co.uk",
-    "phone": "(992) 914-3792"
-  },
-  {
-    "id": "2",
-    "name": "Chaim Lewis",
-    "email": "dui.in@egetlacus.ca",
-    "phone": "(294) 840-6685"
-  },
-  {
-    "id": "3",
-    "name": "Kennedy Lane",
-    "email": "mattis.Cras@nonenimMauris.net",
-    "phone": "(542) 451-7038"
-  },
-  {
-    "id": "4",
-    "name": "Wylie Pope",
-    "email": "est@utquamvel.net",
-    "phone": "(692) 802-2949"
-  },
-  {
-    "id": "5",
-    "name": "Cyrus Jackson",
-    "email": "nibh@semsempererat.com",
-    "phone": "(501) 472-5218"
-  },
-  {
     "id": "6",
     "name": "Abbot Franks",
     "email": "scelerisque@magnis.org",
@@ -63,30 +33,6 @@
     "name": "Mango",
     "email": "mango@gmail.com",
     "phone": "322-22-22",
-    "id": "faf01946-66bb-4484-a4ba-2ea047208a70"
-  },
-  {
-    "name": "Mango",
-    "email": "mango@gmail.com",
-    "phone": "322-22-22",
-    "id": "6bf43826-3bfb-4abd-b3a8-919f4ba49b9a"
-  },
-  {
-    "name": "Mango",
-    "email": "mango@gmail.com",
-    "phone": "322-22-22",
-    "id": "e289d336-236b-4ef7-846a-ce7d2f238048"
-  },
-  {
-    "name": "Mango",
-    "email": "mango@gmail.com",
-    "phone": "322-22-22",
-    "id": "d210691b-e909-4035-87d3-bab360d012bb"
-  },
-  {
-    "name": "Mango",
-    "email": "mango@gmail.com",
-    "phone": "322-22-33",
-    "id": "37634a00-4073-49bb-9273-07eb7e82fc2c"
+    "id": "326e1d3b-edbb-4b5e-b11a-360231c9d2b6"
   }
 ]

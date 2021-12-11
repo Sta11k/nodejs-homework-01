@@ -47,19 +47,17 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 
     case "remove":
       const removeById = await removeContact(id);
-      // const contacts = await listContacts();
       if (removeById) {
-        log(chalk.black.bgGreen(`Contact deleete:  `));
-
-        //  console.log(contactById);
-      } else {
-        log(chalk.black.bgRed(`Contact is not deleete `));
+        log(chalk.black.bgGreen(`Contact deleete: ${id} `));
+        console.table(removeById);
+      } else { 
+           log(chalk.black.bgRed(`Сontact does not exist `));
       }
-      break;
+    break;
 
     default:
       console.warn("\x1B[31m Unknown action type!");
   }
 };
 
-invokeAction(argv).then(() => log(chalk.black.bgRed.bold("Operation success")));
+invokeAction(argv).then(() => log(chalk.white.bgGreen("Operation success")));
