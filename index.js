@@ -1,63 +1,31 @@
-// const fs = require("fs").promises;
-const chalk = require("chalk");
-const { Command } = require("commander");
-const {
-  listContacts,
-  addContact,
-  getContactById,
-  removeContact,
-} = require("./contacts.js");
-const log = console.log;
-log(chalk.black.bgRed.bold("Hello world!"));
+const fs = require('fs/promises');
+  // const readline = require('readline/promises');
+fs.readFile('./README.md')
+  .then(data => console.log(data.toString()))
+  .catch(err => console.log(err.message));
+const text = "AAAAAAAAББББ";
+  fs.writeFile('./README.md',text)
 
-const program = new Command();
-program
-  .requiredOption("-a, --action <type>", "choose action")
-  .option("-i, --id <type>", "user id")
-  .option("-n, --name <type>", "user name")
-  .option("-e, --email <type>", "user email")
-  .option("-p, --phone <type>", "user phone");
+const path = require('path');
+const fullpath = path.resolve(__dirname, 'first', 'second', 'third.js');
+console.log("парс пути", path.parse(fullpath));
+console.log(' Назва файла', path.basename(fullpath));
+console.log(' Розширення файла', path.extname(fullpath));
+console.log(' Перевырка на абсолютний шлях файла', path.isAbsolute(fullpath));
 
-program.parse(process.argv);
+const siteURL = 'http://localhost:8080/users?id=5123';
+const url = new URL(siteURL);
 
-const argv = program.opts();
+console.log(url);
 
-const invokeAction = async ({ action, id, name, email, phone }) => {
-  switch (action) {
-    case "list":
-      const contacts = await listContacts();
-      console.table(contacts);
-      // log.table(contacts);
-      break;
+const http = require('http');
+const port = 3000;
 
-    case "get":
-      const contactById = await getContactById(id);
-      if (contactById) {
-        log(chalk.black.bgGreen(`Contact found: ${id} `));
-        console.log(contactById);
-      } else {
-        log(chalk.black.bgRed(`Contact not found `));
-      }
-      break;
+const server = http.createServer((req, res) => {
+  res.end('Hello world!');
+});
 
-    case "add":
-      const contact = await addContact(name, email, phone);
-      log(chalk.green.bgCyan(`Add new contact: ${contact}`));
-      break;
+server.listen(port, () => {
+  console.log(`Сервер ожидает соединения на порте: ${port}`);
+});
 
-    case "remove":
-      const removeById = await removeContact(id);
-      if (removeById) {
-        log(chalk.black.bgGreen(`Contact deleete: ${id} `));
-        console.table(removeById);
-      } else { 
-           log(chalk.black.bgRed(`Сontact does not exist `));
-      }
-    break;
-
-    default:
-      console.warn("\x1B[31m Unknown action type!");
-  }
-};
-
-invokeAction(argv).then(() => log(chalk.white.bgGreen("Operation success")));
